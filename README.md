@@ -1,1 +1,0 @@
-# rpm-spec-automake116

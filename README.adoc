@@ -1,0 +1,39 @@
+= Ribose RPM Spec for automake116
+
+image:https://img.shields.io/travis/riboseinc/rpm-spec-automake116/master.svg[Build Status (Travis CI), link=https://travis-ci.org/riboseinc/rpm-spec-automake116]
+
+== Introduction
+
+This repository hosts the RPM spec & related Docker files for building the RPM
+package.
+
+It uses code from https://github.com/riboseinc/rpm-specs[`rpm-specs`]
+(added as a Git submodule).
+
+== Usage
+
+This is an https://www.softwarecollections.org[`SCL package`] and has specific
+requirements on usage.
+
+To ensure the installation has gone well, a quick check on the version should
+suffice:
+
+```sh
+scl enable ribose-automake116 -- automake --version
+```
+
+For some uses, you will also want to set or extend `ACLOCAL_PATH`.
+For example, when running `autoreconf` for software that requires an m4
+from a system package (such as gettext-devel), you might use:
+
+```sh
+source /opt/ribose/ribose-automake116/enable
+env ACLOCAL_PATH=/usr/share/aclocal autoreconf -vfi
+```
+
+Or:
+
+```sh
+scl enable ribose-automake116 -- env ACLOCAL_PATH=/usr/share/aclocal autoreconf -vfi
+```
+
