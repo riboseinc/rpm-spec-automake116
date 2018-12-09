@@ -28,12 +28,14 @@ from a system package (such as gettext-devel), you might use:
 
 ```sh
 source /opt/ribose/ribose-automake116/enable
-env ACLOCAL_PATH=/usr/share/aclocal autoreconf -vfi
+# note that we have already sourced in the above, so we can call our (automake116) `aclocal` directly below
+env ACLOCAL_PATH=$(aclocal --print-ac-dir):$(rpm --eval '%{_datadir}/aclocal') autoreconf -vfi
 ```
 
 Or:
 
 ```sh
-scl enable ribose-automake116 -- env ACLOCAL_PATH=/usr/share/aclocal autoreconf -vfi
+aclocal_path=$(scl enable ribose-automake116 -- aclocal --print-ac-dir):$(rpm --eval '%{_datadir}/aclocal')
+scl enable ribose-automake116 -- env ACLOCAL_PATH=$aclocal_path autoreconf -vfi
 ```
 
