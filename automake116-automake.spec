@@ -87,7 +87,7 @@ fi
 %{_mandir}/man1/*
 
 %changelog
-* Tue Nov 22 2018 Daniel Wyatt <daniel.wyatt@ribose.com> - 1.16.1-1
+* Thu Nov 22 2018 Daniel Wyatt <daniel.wyatt@ribose.com> - 1.16.1-1
 - Initial automake116 version, based on reduced spec from CentOS 7.
 
 * Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.13.4-3
