@@ -15,7 +15,7 @@
 
 Summary: Package that installs %scl
 Name: %scl_name
-Version: 1
+Version: 1.1
 Release: 1%{?dist}
 License: GPLv2+ and GFDL and Public Domain and MIT
 BuildRequires: scl-utils-build
@@ -62,6 +62,10 @@ EOF
 %{_root_sysconfdir}/rpm/macros.%{scl}-config
 
 %changelog
+* Sat Apr 06 2019 Daniel Wyatt <daniel.wyatt@ribose.com> - 1.1-1
+- Simplify the enable script.
+- Fix MANPATH issues with "set -u".
+
 * Tue Oct 30 2018 Daniel Wyatt <daniel.wyatt@ribose.com> - 1.0-1
 - Create automake116 metapackage.
 
