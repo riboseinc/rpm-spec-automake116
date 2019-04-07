@@ -2,7 +2,3 @@
 
 include: 'https://raw.githubusercontent.com/riboseinc/rpm-specs/master/ci.template.yml'
 
-variables:
-  PRIMARY_RPM: "ribose-automake116-automake-*.rpm"
-
-
