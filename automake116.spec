@@ -16,7 +16,7 @@
 Summary: Package that installs %scl
 Name: %scl_name
 Version: 1.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: GPLv2+ and GFDL and Public Domain and MIT
 BuildRequires: scl-utils-build
 Requires: %{scl_prefix}automake
@@ -62,10 +62,12 @@ EOF
 %{_root_sysconfdir}/rpm/macros.%{scl}-config
 
 %changelog
+* Thu Jul 14 2022 Jeffrey Lau <jeffrey.lau@ribose.com> - 1.1-2
+- Re-sign package (https://github.com/riboseinc/yum/issues/9)
+
 * Sat Apr 06 2019 Daniel Wyatt <daniel.wyatt@ribose.com> - 1.1-1
 - Simplify the enable script.
 - Fix MANPATH issues with "set -u".
 
 * Tue Oct 30 2018 Daniel Wyatt <daniel.wyatt@ribose.com> - 1.0-1
 - Create automake116 metapackage.
-
